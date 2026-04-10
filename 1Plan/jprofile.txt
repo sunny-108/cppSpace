@@ -1,0 +1,41 @@
+The Software Engineering team delivers next-generation software application enhancements and new products for a changing world. Working at the cutting edge, we design and develop software for platforms, peripherals, applications and diagnostics — all with the most advanced technologies, tools, software engineering methodologies and the collaboration of internal and external partners.
+
+Join us to do the best work of your career and make a profound social impact as a Software Senior Principal Engineer on our Software Engineering Team in Bangalore.
+
+What you’ll achieve
+As a Software Senior Principal Engineer, you will be responsible for developing sophisticated systems and software basis the customer’s business goals, needs and general business environment creating software solutions.
+
+We build enterprise-grade, massively scalable storage systems—clustered, high-performance, and resilient—running across Linux and BSD. Our portfolio includes a multi-petabyte S3 object store and a scale-out NAS platform. We’re a modern, scrum-based engineering org that ships with high velocity and quality, using the best tools, hardware, and practices.
+
+You Will:
+
+·        Design and build next-generation AI data platform storage - mission-critical components powering our AI strategy—giving you the opportunity to tackle state-of-the-art problems in scale, performance, and reliability.
+
+·        Own problems end-to-end across design, implementation, testing, deployment, and supportability—within a cluster storage system.
+
+·        Build and harden distributed services: durability, consistency, replication, data paths, metadata, control planes, scheduling, placement, and lifecycle management.
+
+·        Optimize performance across computer, memory, IO, networking (including RDMA), and storage media (NVMe/SSD/HDD/AFA); drive latency and throughput improvements with data-driven profiling and advance reliability through observability, telemetry, failure injection, chaos testing, and automated remediation; raise the bar on serviceability and supportability.
+
+·        Collaborate in scrum teams; write clear design docs, PRDs, and RFCs; perform code reviews and mentor peers. Raise product quality via automated tests, CI/CD pipelines, build hygiene, and release engineering & Contribute to security & compliance (TLS, authN/Z, crypto, FIPS, STIG/NIST best practices) and secure-by-default engineering.
+
+
+Take the first step towards your dream career
+Every Dell Technologies team member brings something unique to the table. Here’s what we are looking for with this role:
+
+Essential Requirements
+
+·        12  -17 years of experience in systems programming and distributed systems fundamentals (concurrency, networking, storage, consistency, fault tolerance).
+
+·        Proficiency in at least one of C/C++ OR Java and Python (good to have); willingness to learn across the stack.
+
+·        Experience with Linux or BSD development and debugging (e.g., performance, strace/dtrace/eBPF, tcpdump) and ability to write clean, testable code; familiarity with unit/integration/system testing and CI/CD.
+
+·        Technical leadership expertise of building and growing high-performing engineering teams, mentoring senior engineers, and setting technical direction for critical AI data platform storage systems.
+
+·        Must have proven experience setting technical direction and cross-product architecture, delivering high-impact performance and reliability improvements, and raising the company-wide engineering bar through mentorship, clear communication, collaboration, and a bias for action. 
+
+Desirable Requirements
+
+Systems & Performance Engineering: Expertise in kernel subsystems, device drivers, firmware; RDMA/verbs; SPDK/DPDK; JVM tuning and GC; async/reactive patterns; lock-free/concurrent data structures; filesystem internals (NFS/SMB, S3 object store, erasure coding); observability stacks, performance profiling at scale, and chaos/failure injection.
+Security & Cloud Platforms: Skilled in security and cryptography (FIPS/CC compliance), secure boot, TPM, HSM integrations; experienced with private and public cloud environments including Microsoft Azure, Google Cloud Platform (GCP), and Amazon Web Services (AWS) & exposure or usage of AI tools to build code/design is big plus.
