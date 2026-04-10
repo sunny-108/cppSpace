@@ -1,0 +1,128 @@
+
+PR for following Problem -
+https://github.hpe.com/hpe/so-d2d-catalyst_plugins/pull/35/files
+
+Problem:
+
+Snippet of backint log showing list of backups to expire, and after backint has finished, showing some backups have successfully deletes, whilst others ERROR'd.
+
+backint log:
+2020-06-03 10:04:04.384 backint started:
+  command: /usr/sap/QM1/SYS/global/hdb/opt/hdbbackint -f delete -p /hana/shared/QM1/hpe/HPE-Catalyst-SAP-HANA-Plugin/config/plugin_log.conf -i /var/tmp/hdbbackint_QM1.h2nZDv -o /var/tmp/hdbbackint_QM1.H2wF5O -u QM1
+  pid: 10866
+  input:
+  #SOFTWAREID "backint 1.04" "HANA HDB server 2.00.045.00.1575639312"
+  #EBID 1588669326442_31huJ4vc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588669331153_0gFBK4vc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588669591851_5sktb4vc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588670455050_IyyEY5vc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588671355051_dRI9X6vc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588672255053_ONc3W7vc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588673155054_dUwxU8vc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588674055055_5hEsT9vc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588674955056_C4YmSAvc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588675855057_sCsgRBvc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588676781877_KzISSCvc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588677655069_tqXVPDvc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588678555071_H8rPOEvc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588679455072_Zq9KNFvc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588680355073_RmTEMGvc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588681255074_Stm8LHvc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #EBID 1588682155076_hV63KIvc "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+
+2020-06-03 10:06:26.987 backint terminated:
+  pid: 10866
+  exit code: 0
+  output:
+  #SOFTWAREID "backint 1.04" "HPE StoreOnce SAPHana Plugin 2.1.0.2332"
+  #DELETED "1588669326442_31huJ4vc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588669331153_0gFBK4vc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588669591851_5sktb4vc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588670455050_IyyEY5vc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588671355051_dRI9X6vc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588672255053_ONc3W7vc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588673155054_dUwxU8vc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588674055055_5hEsT9vc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588674955056_C4YmSAvc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588675855057_sCsgRBvc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588676781877_KzISSCvc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588677655069_tqXVPDvc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588678555071_H8rPOEvc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588679455072_Zq9KNFvc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #DELETED "1588680355073_RmTEMGvc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #ERROR "1588681255074_Stm8LHvc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+  #ERROR "1588682155076_hV63KIvc" "/usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0"
+
+
+##### Connector log of failed deletes #####
+2020-06-03 09:04:06.847469 (local 10:04): QUIET : 10866_2518935296 : SAPHanaDelete.cpp : operationStream : Ln 50 : Delete externalBackupId: 1588681255074_Stm8LHvc objectName: 1588681255074_QM1_Stm8LHvc pipeName: /usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0
+2020-06-03 09:04:21.172638 (local 10:04): INFO : 10866_2518935296 : CredentialsManager.cpp : getUserDetails : Ln 1736 : Failed to read credentials file! cannot list the objects (Open command session to DC01SAPSO01DATA.sapgreggs.group failed. retryCount 0. : OSCLT_ERR_SERVER_OFFLINE [-1404] (from:Open@188)) in Open (???e.GetFileName()???:188)
+2020-06-03 09:04:50.789141 (local 10:04): ERROR : 10866_2518935296 : ISAPOperation.cpp : validateConfig : Ln 142 : Failed to validate config config validation failed: invalid configuration: cannot access the store (Listing store Hana_QAS_LOG from DC01SAPSO01DATA.sapgreggs.group failed. : OSCLT_ERR_PERMISSION_DENIED [-1410] (from:GetObjectStore@375)) in validateConfig (CatalystBackupStorage.cpp:181) 1 0 0: config validation failed: invalid configuration: cannot access the store (Listing store Hana_QAS_LOG from DC01SAPSO01DATA.sapgreggs.group failed. : OSCLT_ERR_PERMISSION_DENIED [-1410] (from:GetObjectStore@375)) in validateConfig (CatalystBackupStorage.cpp:181)
+2020-06-03 09:04:50.789179 (local 10:04): INFO : 10866_2518935296 : SAPHanaDelete.cpp : operationStream : Ln 98 : Delete finished:
+2020-06-03 09:04:50.789199 (local 10:04): INFO : 10866_2518935296 : SAPHanaDelete.cpp : operationStream : Ln 99 : 	FileName: /usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0	Result: #ERROR
+2020-06-03 09:04:50.789213 (local 10:04): INFO : 10866_2518935296 : SAPHanaDelete.cpp : operationStream : Ln 100 : 	ObjectName: 1588681255074_QM1_Stm8LHvc	ExternalBackupId: 1588681255074_Stm8LHvc
+2020-06-03 09:04:50.789229 (local 10:04): QUIET : 10866_2518935296 : ISAPOperation.cpp : rollupInstrumentation : Ln 104 : 	Stream Time: 73557547	Plugin Time:43941268	ISV Time: 0	Catalyst Time: 29616279
+
+2020-06-03 09:04:06.847627 (local 10:04): QUIET : 10866_2518406912 : SAPHanaDelete.cpp : operationStream : Ln 50 : Delete externalBackupId: 1588682155076_hV63KIvc objectName: 1588682155076_QM1_hV63KIvc pipeName: /usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0
+2020-06-03 09:04:21.173935 (local 10:04): INFO : 10866_2518406912 : CredentialsManager.cpp : getUserDetails : Ln 1736 : Failed to read credentials file! cannot list the objects (Open command session to DC01SAPSO01DATA.sapgreggs.group failed. retryCount 0. : OSCLT_ERR_SERVER_OFFLINE [-1404] (from:Open@188)) in Open (???e.GetFileName()???:188)
+2020-06-03 09:04:26.838618 (local 10:04): ERROR : 10866_2518406912 : ISAPOperation.cpp : validateConfig : Ln 142 : Failed to validate config config validation failed: invalid configuration: cannot access the store (Listing store Hana_QAS_LOG from DC01SAPSO01DATA.sapgreggs.group failed. : OSCLT_ERR_PERMISSION_DENIED [-1410] (from:GetObjectStore@375)) in validateConfig (CatalystBackupStorage.cpp:181) 1 0 0: config validation failed: invalid configuration: cannot access the store (Listing store Hana_QAS_LOG from DC01SAPSO01DATA.sapgreggs.group failed. : OSCLT_ERR_PERMISSION_DENIED [-1410] (from:GetObjectStore@375)) in validateConfig (CatalystBackupStorage.cpp:181)
+2020-06-03 09:04:26.838656 (local 10:04): INFO : 10866_2518406912 : SAPHanaDelete.cpp : operationStream : Ln 98 : Delete finished:
+2020-06-03 09:04:26.838676 (local 10:04): INFO : 10866_2518406912 : SAPHanaDelete.cpp : operationStream : Ln 99 : 	FileName: /usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0	Result: #ERROR
+2020-06-03 09:04:26.838692 (local 10:04): INFO : 10866_2518406912 : SAPHanaDelete.cpp : operationStream : Ln 100 : 	ObjectName: 1588682155076_QM1_hV63KIvc	ExternalBackupId: 1588682155076_hV63KIvc
+2020-06-03 09:04:26.838708 (local 10:04): QUIET : 10866_2518406912 : ISAPOperation.cpp : rollupInstrumentation : Ln 104 : 	Stream Time: 25654931	Plugin Time:19990478	ISV Time: 0	Catalyst Time: 5664453
+
+
+##### Connector log of successful deletes #####
+2020-06-03 09:04:06.845832 (local 10:04): QUIET : 10866_2546513664 : SAPHanaDelete.cpp : operationStream : Ln 50 : Delete externalBackupId: 1588669326442_31huJ4vc objectName: 1588669326442_QM1_31huJ4vc pipeName: /usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0
+2020-06-03 09:04:08.291962 (local 10:04): INFO : 10866_2546513664 : CredentialsManager.cpp : getUserDetails : Ln 1725 : User qm1adm-sapvqm1db01-hana using information stored in credentials file
+2020-06-03 09:04:10.007070 (local 10:04): INFO : 10866_2546513664 : CredentialsManager.cpp : getUserDetails : Ln 1725 : User qm1adm-sapvqm1db01-hana using information stored in credentials file
+2020-06-03 09:04:16.299548 (local 10:04): INFO : 10866_2546513664 : SAPHanaDelete.cpp : validateStorageOperation : Ln 112 : ------------------------------ Function (validateStorageOperation) Entry ------------------------------
+2020-06-03 09:04:16.299589 (local 10:04): QUIET : 10866_2546513664 : SAPHanaInquire.cpp : operationStream : Ln 212 : Inquire inquireAll: 0 inquireNull: 0 objectName: 1588669326442_QM1_31huJ4vc pipeName: /usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0
+2020-06-03 09:04:40.566652 (local 10:04): INFO : 10866_2546513664 : CredentialsManager.cpp : getUserDetails : Ln 1725 : User qm1adm-sapvqm1db01-hana using information stored in credentials file
+2020-06-03 09:04:42.038033 (local 10:04): INFO : 10866_2546513664 : CredentialsManager.cpp : getUserDetails : Ln 1725 : User qm1adm-sapvqm1db01-hana using information stored in credentials file
+2020-06-03 09:04:47.286923 (local 10:04): INFO : 10866_2546513664 : SAPHanaInquire.cpp : validateStorageOperation : Ln 330 : ------------------------------ Function (validateStorageOperation) Entry ------------------------------
+2020-06-03 09:04:47.286956 (local 10:04): INFO : 10866_2546513664 : SAPHanaInquire.cpp : validateStorageOperation : Ln 331 : ------------------------------ Function (validateStorageOperation) Exit  ------------------------------
+2020-06-03 09:04:47.286974 (local 10:04): INFO : 10866_2546513664 : SAPHanaInquire.cpp : doStorageOperation : Ln 340 : ------------------------------ Function (doStorageOperation) Entry ------------------------------
+2020-06-03 09:04:49.653882 (local 10:04): INFO : 10866_2546513664 : SAPHanaInquire.cpp : doStorageOperation : Ln 400 : Found object: 1588669326442_QM1_31huJ4vc_LOG_1
+2020-06-03 09:04:49.653919 (local 10:04): INFO : 10866_2546513664 : SAPHanaInquire.cpp : doStorageOperation : Ln 436 : ------------------------------ Function (doStorageOperation) Exit  ------------------------------
+2020-06-03 09:04:49.653938 (local 10:04): INFO : 10866_2546513664 : SAPHanaInquire.cpp : finishStorageOperation : Ln 443 : ------------------------------ Function (finishStorageOperation) Entry ------------------------------
+2020-06-03 09:04:49.653953 (local 10:04): INFO : 10866_2546513664 : SAPHanaInquire.cpp : finishStorageOperation : Ln 448 : ------------------------------ Function (finishStorageOperation) Exit  ------------------------------
+2020-06-03 09:04:49.653970 (local 10:04): QUIET : 10866_2546513664 : ISAPOperation.cpp : rollupInstrumentation : Ln 104 : 	Stream Time: 33354319	Plugin Time:26488382	ISV Time: 0	Catalyst Time: 6865937
+2020-06-03 09:04:49.654012 (local 10:04): INFO : 10866_2546513664 : SAPHanaDelete.cpp : validateStorageOperation : Ln 125 : List result for delete validation. Number of return objects for 1: 3
+2020-06-03 09:04:49.654028 (local 10:04): INFO : 10866_2546513664 : SAPHanaDelete.cpp : validateStorageOperation : Ln 141 : ------------------------------ Function (validateStorageOperation) Exit  ------------------------------
+2020-06-03 09:04:49.654048 (local 10:04): INFO : 10866_2546513664 : SAPHanaDelete.cpp : doStorageOperation : Ln 147 : ------------------------------ Function (doStorageOperation) Entry ------------------------------
+2020-06-03 09:05:24.572487 (local 10:05): INFO : 10866_2546513664 : SAPHanaDelete.cpp : doStorageOperation : Ln 184 : ------------------------------ Function (doStorageOperation) Exit  ------------------------------
+2020-06-03 09:05:24.572530 (local 10:05): INFO : 10866_2546513664 : SAPHanaDelete.cpp : finishStorageOperation : Ln 191 : ------------------------------ Function (finishStorageOperation) Entry ------------------------------
+2020-06-03 09:05:24.572549 (local 10:05): INFO : 10866_2546513664 : SAPHanaDelete.cpp : finishStorageOperation : Ln 196 : ------------------------------ Function (finishStorageOperation) Exit  ------------------------------
+2020-06-03 09:05:24.572577 (local 10:05): INFO : 10866_2546513664 : SAPHanaDelete.cpp : operationStream : Ln 98 : Delete finished:
+2020-06-03 09:05:24.572594 (local 10:05): INFO : 10866_2546513664 : SAPHanaDelete.cpp : operationStream : Ln 99 : 	FileName: /usr/sap/QM1/SYS/global/hdb/backint/SYSTEMDB/log_backup_0_0_0_0	Result: #DELETED
+2020-06-03 09:05:24.572625 (local 10:05): INFO : 10866_2546513664 : SAPHanaDelete.cpp : operationStream : Ln 100 : 	ObjectName: 1588669326442_QM1_31huJ4vc_LOG_1	ExternalBackupId: 1588669326442_31huJ4vc
+2020-06-03 09:05:24.572641 (local 10:05): QUIET : 10866_2546513664 : ISAPOperation.cpp : rollupInstrumentation : Ln 104 : 	Stream Time: 77726625	Plugin Time:70678612
+
+
+##### The Catalyst client logs don't give a huge amount of info. Using the same thread ID for 1588681255074_Stm8LHvc we hit an error during a list objectstores request to Catalyst. #####
+2020-06-03 09:04:50.782612 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : osCltCmd_ListObjectStores : Ln 1998 : --------------- Entering osCltCmd_ListObjectStores. Session ID : 1235. Session Type : 1. Transport Socket FD #0 : 15 ---------------
+2020-06-03 09:04:50.782619 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : rDbgPrv_LogObjectStoreListFilterType : Ln 1028 : rDbgPrv_LogObjectStoreListFilterType invoked from osCltCmd_ListObjectStores Ln 2001
+2020-06-03 09:04:50.782626 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : rDbgPrv_LogObjectStoreListFilterType : Ln 1036 : Key Filter : Hana_QAS_LOG, ExactMatch : true.
+2020-06-03 09:04:50.782633 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : osCltCmd_ListObjectStores : Ln 2002 : Objectstore array size : 1.
+2020-06-03 09:04:50.782640 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : rDbgPrv_LogCompoundListHandleType : Ln 1173 : rDbgPrv_LogCompoundListHandleType invoked from osCltCmd_ListObjectStores Ln 2003
+2020-06-03 09:04:50.782648 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : rDbgPrv_LogCompoundListHandleType : Ln 1181 : CompoundListHandle Magic : 0.
+2020-06-03 09:04:50.782655 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : rDbgPrv_LogCompoundListHandleType : Ln 1182 : CompoundListHandle Is Teamed : false.
+2020-06-03 09:04:50.782662 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : rDbgPrv_LogCompoundListHandleType : Ln 1183 : CompoundListHandle Team Member Bit Mask : 0.
+2020-06-03 09:04:50.782669 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : rDbgPrv_LogCompoundListHandleType : Ln 1198 : Non-Teamed CompoundListHandle Team Member List Handle 0 :
+2020-06-03 09:04:50.782680 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : rDbgPrv_LogListHandleType : Ln 1154 : rDbgPrv_LogListHandleType invoked from osCltCmd_ListObjectStores Ln 2003
+2020-06-03 09:04:50.782687 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : rDbgPrv_LogListHandleType : Ln 1162 : ListHandle Magic : 0.
+2020-06-03 09:04:50.782694 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : rDbgPrv_LogListHandleType : Ln 1163 : ListHandle Ordered By UUID : false.
+2020-06-03 09:04:50.782701 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : rDbgPrv_LogListHandleType : Ln 1164 : ListHandle Waypoint ID : 0.
+2020-06-03 09:04:50.782708 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : rDbgPrv_LogListHandleType : Ln 1166 : ListHandle Waypoint UUID : 00000000000000000000000000000000.
+2020-06-03 09:04:50.787888 (local 10:04) : ERROR : 10866_2518935296  : 1235 : TC :  15 : DATA.sapgreggs.group : OSCPP : osCltTrnPrv_TranslateProtocolStatusToLocalWithLogging : Ln 1092 : Protocol status 101 mapped to local status -1410
+2020-06-03 09:04:50.787905 (local 10:04) : ERROR : 10866_2518935296  : 1235 : TC :  15 : DATA.sapgreggs.group : OSCPP : osCltTrnCmd_ListObjectStores : Ln 1027 : GOTO ReturnStatus = -1410 (OSCLT_ERR_PERMISSION_DENIED).
+2020-06-03 09:04:50.787912 (local 10:04) : ERROR : 10866_2518935296  : 1235 : TC :  15 : DATA.sapgreggs.group : OSCPP : osCltTrnCmdPrv_LogErrorAndCalcReturnStatus : Ln 149 : returnStatus=-1410
+2020-06-03 09:04:50.787921 (local 10:04) : ERROR : 10866_2518935296  : 1235 : TMC : OSCPP : osCltTeamCmd_ListObjectStores : Ln 2042 : Failed to list object stores.
+2020-06-03 09:04:50.787929 (local 10:04) : ERROR : 10866_2518935296  : 1235 : TMC : OSCPP : osCltTeamCmd_ListObjectStores : Ln 2043 : GOTO ReturnStatus = -1410 (OSCLT_ERR_PERMISSION_DENIED).
+2020-06-03 09:04:50.787936 (local 10:04) : ERROR : 10866_2518935296  : 1235 : C : OSCPP : osCltCmd_ListObjectStores : Ln 2068 : List objectstores failed with error : -1410.
+2020-06-03 09:04:50.787943 (local 10:04) : ERROR : 10866_2518935296  : 1235 : C : OSCPP : osCltCmd_ListObjectStores : Ln 2070 : GOTO ReturnStatus = -1410 (OSCLT_ERR_PERMISSION_DENIED).
+2020-06-03 09:04:50.787950 (local 10:04) : INFO : 10866_2518935296  : 1235 : C : OSCPP : osCltCmd_ListObjectStores : Ln 2086 : --------------- Exiting osCltCmd_ListObjectStores, Return Status : -1410 (OSCLT_ERR_PERMISSION_DENIED) ---------------
+2020-06-03 09:04:50.787971 (local 10:04) : ERROR : 10866_2518935296  : 1235 : +C : OSCPP : GetObjectStore : Ln 375 : EXCEPTION: Listing store Hana_QAS_LOG from DC01SAPSO01DATA.sapgreggs.group failed. : OSCLT_ERR_PERMISSION_DENIED [-1410] (from:GetObjectStore@375)
+
+

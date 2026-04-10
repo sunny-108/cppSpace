@@ -1,0 +1,28 @@
+Books: (6 AM to 8 AM)
+
+1. C++ concurrency in action <== (1st to 15th Jan)
+2. modern effective C++ <== (16th to 30th Jan)
+
+3. System Archtecture interview book
+4. Head First Design Patterns
+5. Coding (DS + Algo) patern book
+
+Video Tutorials: (5 to 7 PM)
+
+Oreilly -
+1. introduction to C++ concurrency
+2. High performance computing and concurrency
+3. Linux under the hood 2 <== (1st Jan to 30th Jan)
+4. Deep learning
+
+youtube -
+
+1. software archtecture monday
+
+
+===========================================================================
+Jan => C++ and Linux
+Feb => Design pattern, Design Architecture + Coding
+March => Coding + interview
+===========================================================================
+===========================================================================

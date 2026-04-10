@@ -1,0 +1,7 @@
+# Benchmark Results
+
+Place Google Benchmark JSON output here.
+
+```bash
+./bench_event_bus --benchmark_format=json > results/baseline.json
+```
